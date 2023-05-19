@@ -1,0 +1,32 @@
+package ChannelAutomation;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import com.Channel4.BaseClass.BaseClass;
+import com.Channel4.Utils.Log;
+
+public class VerifyHomePageNavigation extends BaseClass{
+	
+	
+	@Test
+	public void VerifyUserNavigationForHomapage() throws Exception
+	{
+		Log.startTestCase("VerifyHomePageNavigation");
+		Thread.sleep(3000);
+		Log.info("User Going to Click on Accept&Continue button");
+		//Hp.AcceptContinue();
+		Thread.sleep(3000);
+		Log.info("Successfully Clicked on Accept&Continue button");
+	    //Hp.HomeIcon().click();
+	    Hp.SearchOption().click();
+	    Log.info("Entering Values In SeachBox");
+	    Hp.SearchBox().sendKeys("Made in Chelsea");
+	    Hp.ClickOnFirstOption().click();
+	    Hp.PlayButton().click();
+	    Hp.CloseButton().click();
+	    String Color=Hp.ButtonBackground();
+	    Assert.assertEquals("Colour","Colour");
+	    
+	    
+	}
+
+}

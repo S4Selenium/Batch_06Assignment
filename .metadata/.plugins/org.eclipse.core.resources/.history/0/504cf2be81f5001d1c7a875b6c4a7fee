@@ -1,0 +1,20 @@
+package ChannelAutomation;
+
+import org.testng.annotations.Test;
+
+import com.Channel4.BaseClass.BaseClass;
+import com.Channel4.PageObjects.Channel4HomePage;
+import com.Channel4.Utils.Log;
+
+public class VerifyHomePageNavigation extends BaseClass{
+	
+	
+	@Test
+	public void VerifyUserNavigationForHomapage()
+	{
+		Log.startTestCase("VerifyHomePageNavigation");
+		Channel4HomePage Hp = new Channel4HomePage(getDriver());
+	
+	}
+
+}

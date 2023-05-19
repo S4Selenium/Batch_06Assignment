@@ -1,0 +1,59 @@
+package com.Channel4.PageObjects;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Channel4.BaseClass.BaseClass;
+
+public class Channel4HomePage extends BaseClass {
+public WebDriver driver;	
+	
+	
+	@FindBy(xpath = "//a[@id='home-link']")
+	WebElement Home;
+
+	@FindBy(xpath = "//a[@aria-label='Search, click to expand']")
+	WebElement SearchOption;
+	
+	@FindBy(xpath = "//a[@href='/payrollapp/client/index']")
+	WebElement Client;
+
+	@FindBy(xpath = "//a[normalize-space()='Workers']")
+	WebElement worker;
+	
+	
+	
+	public Channel4HomePage(WebDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver=driver;
+		PageFactory.initElements(driver,this);
+	}
+	
+	public WebElement Home() {
+		return Home;
+	}
+
+	public WebElement SearchOption()
+
+	{
+		action.explicitWait(driver,SearchOption,Duration.ofSeconds(10));
+		return SearchOption;
+		
+	}
+
+	public WebElement worker() {
+		return worker;
+	}
+	
+	/*
+	 * public Client ClientsTab() {
+	 * 
+	 * Action act = new Action(); act.click(driver, Client); return new
+	 * Client(driver); }
+	 */
+	
+}

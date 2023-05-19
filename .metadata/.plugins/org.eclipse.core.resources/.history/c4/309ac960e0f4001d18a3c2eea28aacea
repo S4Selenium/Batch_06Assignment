@@ -1,0 +1,17 @@
+package ChannelAutomation;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+
+public class VerifyUserHomePage {
+	
+	
+	@BeforeMethod
+	public void Init()
+	{
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.channel4.com/ homepage ");
+		
+	}
+
+}

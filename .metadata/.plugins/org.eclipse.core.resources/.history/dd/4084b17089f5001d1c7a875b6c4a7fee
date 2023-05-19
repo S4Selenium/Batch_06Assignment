@@ -1,0 +1,79 @@
+package com.Channel4.PageObjects;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.Channel4.BaseClass.BaseClass;
+
+public class Channel4HomePage extends BaseClass {
+	public WebDriver driver;
+	
+	@FindBy(xpath = "//span[text()='Accept & Continue']")
+	WebElement PopupAccept;
+
+	@FindBy(xpath = "//a[@id='home-link']")
+	WebElement HomeIcon;
+
+	@FindBy(xpath = "//a[@aria-label='Search, click to expand']")
+	WebElement SearchOption;
+
+	@FindBy(xpath = "//input[@type='search']")
+	WebElement SearchBox;
+	
+	@FindBy(xpath = "//ul/li[@tabindex='-1'][1]")
+	WebElement ClickOnOption;
+
+	@FindBy(xpath = "//span[contains(text(),'Sign in to play')]")
+	WebElement PlayButton;
+	
+	@FindBy(xpath = "//button)[3]")
+	WebElement CloseButton;
+	
+	@FindBy(xpath = "(//div[@class='text-button__inner'])[1]")
+	WebElement ButtonBackground;
+
+	public Channel4HomePage(WebDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void AcceptContinue() throws Exception {
+		
+		action.JSClick(driver,PopupAccept);
+	}
+
+	public WebElement HomeIcon() {
+		return HomeIcon;
+	}
+
+	public WebElement SearchOption()
+
+	{
+		action.explicitWait(getDriver(), SearchOption, Duration.ofSeconds(10));
+		return SearchOption;
+	}
+
+	public WebElement SearchBox() {
+		return SearchBox;
+	}
+
+	public WebElement ClickOnFirstOption() {
+		return ClickOnOption;
+	}
+
+	public WebElement PlayButton() {
+		return PlayButton;
+	}
+	public WebElement CloseButton() {
+		return CloseButton;
+	}
+	public String ButtonBackground() {
+		return ButtonBackground.getCssValue("background-color");
+	}
+
+}
